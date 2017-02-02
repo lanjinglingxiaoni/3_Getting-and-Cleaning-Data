@@ -11,7 +11,7 @@ data.dir <- "./data/UCI HAR Dataset/"
 features <- read.table(file.path(data.dir, "features.txt"), colClasses = c(NA, "character"))[,2]
 
 # Read the training dataset
-subjec_train <- read.table(file.path(data.dir, "train/subject_train.txt"), col.names = "ID")
+subject_train <- read.table(file.path(data.dir, "train/subject_train.txt"), col.names = "ID")
 y_train <- read.table(file.path(data.dir, "train/y_train.txt"), col.names = "Activity",colClasses = "factor")
 x_train <- read.table(file.path(data.dir, "train/x_train.txt"), col.names = features, check.names = FALSE)
 train <- cbind(subject_train, y_train, x_train)
@@ -23,7 +23,7 @@ y_test <- read.table(file.path(data.dir, "test/y_test.txt"), col.names = "Activi
 test <- cbind(subject_test, y_test, x_test)
 
 data <- rbind(train, test)
-#colnames(data) <- features
+
 
 ## 2. Extracts only the measurements on the mean and standard deviation for each measurement.
 mean_std <- grep("*mean\\(\\)*|*std\\(\\)*", features)
@@ -40,4 +40,4 @@ colnames(data.mean_std)<- gsub("(t|f)(Body|Gravity)(Body|*)", "\\1.\\2.", colnam
 ## 5. From the data set in step 4, creates a second, independent tidy data set with the average 
 ###    of each variable for each activity and each subject.
 tidy <- ddply(data.mean_std, .(ID, Activity), numcolwise(mean))
-write.table(tidy, file="./tidy.csv", quote = FALSE)
+write.csv(tidy, file="./data/tidy.csv", quote = FALSE)

@@ -1,7 +1,7 @@
 # Getting and Cleaning Data Course Project
 
 ## Purpose
-Collect, work with, and clean a data set that can be used for later analysis.
+Collect, work with, and clean a data set that can be used for later analysis. This project is to process data of [Human Activity Recognition Smartphones Dataset Version 1.0](https://d39qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and generate a tidy dataset using run_analysis.R. 
 
 ## Background
 Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. This Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
@@ -10,7 +10,7 @@ Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advan
 
 * Data for the project: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-## Requirements
+## Data Process
 (1) Merges the training and the test sets to create one data set.  
 
 (2) Extracts only the measurements on the mean and standard deviation for each measurement.  
@@ -19,7 +19,7 @@ Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advan
 
 (4) Appropriately labels the data set with descriptive variable names.  
 
-(5) From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.  
+(5) From the data set in step 4, creates a second, independent tidy data set (called tidy.txt) with the average of each variable for each activity and each subject.  
 
 ## Output
 (1) a code book called CodeBook.md. It describes the variables, the data, and any transformations or work that you performed to clean up the data.  

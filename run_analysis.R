@@ -39,6 +39,9 @@ colnames(data.mean_std)<- gsub("(t|f)(Body|Gravity)(Body|*)", "\\1.\\2.", colnam
 
 ## 5. From the data set in step 4, creates a second, independent tidy data set with the average 
 ###    of each variable for each activity and each subject.
+if (!require("plyr")) {
+  install.packages("plyr")
+}
 library(plyr)
 tidy <- ddply(data.mean_std, .(ID, Activity), numcolwise(mean))
 write.table(tidy, file="./data/tidy.txt", row.names = FALSE)
